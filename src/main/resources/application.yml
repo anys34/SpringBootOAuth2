@@ -11,6 +11,9 @@ spring:
   h2:
     console:
       enabled: true
+  profiles:
+    include=oauth
+
 jwt:
   issuer: anyeseong34@gmail.com
   secret_key: anys34
