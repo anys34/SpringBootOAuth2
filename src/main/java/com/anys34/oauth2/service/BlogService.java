@@ -42,4 +42,8 @@ public class BlogService {
 
         return article;
     }
+
+    public Article save(AddArticleRequest request, String userName) {
+        return blogRepository.save(request.toEntity(userName));
+    }
 }
