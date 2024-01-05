@@ -14,11 +14,10 @@ import java.util.List;
 @RequiredArgsConstructor
 @Service
 public class BlogService {
-
     private final BlogRepository blogRepository;
 
-    public Article save(AddArticleRequest request) {
-        return blogRepository.save(request.toEntity());
+    public Article save(AddArticleRequest request, String userName) {
+        return blogRepository.save(request.toEntity(userName));
     }
 
     public List<Article> findAll() {
@@ -55,9 +54,5 @@ public class BlogService {
         if(!article.getAuthor().equals(userName)) {
             throw new IllegalArgumentException("not authorized");
         }
-    }
-
-    public Article save(AddArticleRequest request, String userName) {
-        return blogRepository.save(request.toEntity(userName));
     }
 }

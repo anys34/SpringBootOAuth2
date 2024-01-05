@@ -12,7 +12,7 @@ spring:
     console:
       enabled: true
   profiles:
-    include=oauth
+    include: oauth
 
 jwt:
   issuer: anyeseong34@gmail.com
