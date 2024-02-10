@@ -1,19 +1,18 @@
 spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/oauth
+    username: root
+    password:
+
   jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
     show-sql: true
     properties:
       hibernate:
         format_sql: true
-    defer-datasource-initialization: true
-  datasource:
-    url: jdbc:h2:mem:testdb
-    username: sa
-  h2:
-    console:
-      enabled: true
-  profiles:
-    include: oauth
-
-jwt:
-  issuer: anyeseong34@gmail.com
-  secret_key: anys34
+    open-in-view: false
