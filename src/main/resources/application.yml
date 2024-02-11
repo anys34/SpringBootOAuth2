@@ -16,3 +16,9 @@ spring:
       hibernate:
         format_sql: true
     open-in-view: false
+
+auth:
+  google:
+    base-url: ${GOOGLE_BASE_URL}
+    client-id: ${GOOGLE_CLIENT}
+    redirect-url: ${GOOGLE_REDIRECT}
