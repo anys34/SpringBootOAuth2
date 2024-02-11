@@ -2,8 +2,8 @@ package com.anys34.oauth2.domain.auth.presentation;
 
 import com.anys34.oauth2.domain.auth.presentation.dto.req.AccessTokenRequest;
 import com.anys34.oauth2.domain.auth.presentation.dto.res.TokenResponse;
-import com.anys34.oauth2.domain.auth.service.GoogleAuthLinkService;
-import com.anys34.oauth2.domain.auth.service.GoogleAuthService;
+import com.anys34.oauth2.domain.auth.service.google.GoogleAuthLinkService;
+import com.anys34.oauth2.domain.auth.service.google.GoogleAuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

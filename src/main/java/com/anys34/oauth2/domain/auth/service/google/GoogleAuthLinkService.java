@@ -1,4 +1,4 @@
-package com.anys34.oauth2.domain.auth.service;
+package com.anys34.oauth2.domain.auth.service.google;
 
 import com.anys34.oauth2.global.config.properties.AuthProperties;
 import lombok.RequiredArgsConstructor;

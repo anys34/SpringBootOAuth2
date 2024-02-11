@@ -1,4 +1,4 @@
-package com.anys34.oauth2.domain.auth.service;
+package com.anys34.oauth2.domain.auth.service.google;
 
 import com.anys34.oauth2.domain.auth.presentation.dto.res.TokenResponse;
 import com.anys34.oauth2.domain.user.domain.User;
