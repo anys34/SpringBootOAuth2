@@ -27,6 +27,7 @@ public class AuthProperties {
     public static class Kakao {
         private String baseUrl;
         private String clientId;
+        private String javascriptId;
         private String redirectUrl;
     }
 
@@ -48,6 +49,10 @@ public class AuthProperties {
 
     public String getKakaoClientId() {
         return kakao.getClientId();
+    }
+
+    public String getKakaoJavascriptId() {
+        return kakao.getJavascriptId();
     }
 
     public String getKakaoRedirectUrl() {

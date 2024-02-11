@@ -15,7 +15,7 @@ public class KakaoAuthLinkService {
         return authProperties.getKakaoBaseUrl() +
                 String.format(
                         QUERY_STRING,
-                        authProperties.getKakaoClientId(),
+                        authProperties.getKakaoJavascriptId(),
                         authProperties.getKakaoRedirectUrl()
                 );
     }

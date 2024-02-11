@@ -25,6 +25,7 @@ auth:
   kakao:
     base-url: ${KAKAO_BASE_URL}
     client-id: ${KAKAO_CLIENT}
+    javascript-id: ${KAKAO_JAVASCRIPT}
     redirect-url: ${KAKAO_REDIRECT}
 
 jwt:
