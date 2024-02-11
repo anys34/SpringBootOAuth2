@@ -3,6 +3,7 @@ package com.anys34.oauth2.domain.user.domain;
 import com.anys34.oauth2.domain.user.domain.type.Provider;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -23,4 +24,12 @@ public class User {
     private String profileImg;
 
     private Provider provider;
+
+    @Builder
+    public User(String email, String nickname, String profileImg, Provider provider) {
+        this.email = email;
+        this.nickname = nickname;
+        this.profileImg = profileImg;
+        this.provider = provider;
+    }
 }
