@@ -13,6 +13,7 @@ public class AuthProperties {
 
     private Google google;
     private Kakao kakao;
+    private Naver naver;
 
     @Getter
     @Setter
@@ -29,6 +30,16 @@ public class AuthProperties {
         private String clientId;
         private String javascriptId;
         private String redirectUrl;
+    }
+
+    @Getter
+    @Setter
+    public static class Naver {
+        private String baseUrl;
+        private String clientId;
+        private String secretId;
+        private String redirectUrl;
+        private String state;
     }
 
     public String getGoogleBaseUrl() {
@@ -57,5 +68,25 @@ public class AuthProperties {
 
     public String getKakaoRedirectUrl() {
         return kakao.getRedirectUrl();
+    }
+
+    public String getNaverBaseUrl() {
+        return naver.getBaseUrl();
+    }
+
+    public String getNaverClientId() {
+        return naver.getClientId();
+    }
+
+    public String getNaverSecretId() {
+        return naver.getSecretId();
+    }
+
+    public String getNaverRedirectUrl() {
+        return naver.getRedirectUrl();
+    }
+
+    public String getNaverState() {
+        return naver.getState();
     }
 }
