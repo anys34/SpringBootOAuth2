@@ -16,7 +16,7 @@ public class KakaoController {
     private final KakaoAuthService kakaoAuthService;
 
     @GetMapping
-    public String getGoogleAuthLink() {
+    public String getKakaoAuthLink() {
         return kakaoAuthLinkService.execute();
     }
 
