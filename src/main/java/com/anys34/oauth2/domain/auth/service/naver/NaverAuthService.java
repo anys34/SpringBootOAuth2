@@ -5,6 +5,7 @@ import com.anys34.oauth2.domain.auth.presentation.dto.res.TokenResponse;
 import com.anys34.oauth2.domain.user.domain.User;
 import com.anys34.oauth2.domain.user.domain.repository.UserRepository;
 import com.anys34.oauth2.domain.user.domain.type.Provider;
+import com.anys34.oauth2.domain.user.facade.UserFacade;
 import com.anys34.oauth2.global.config.properties.AuthProperties;
 import com.anys34.oauth2.global.feign.auth.naver.NaverAuthClient;
 import com.anys34.oauth2.global.feign.auth.naver.NaverInformationClient;
@@ -24,6 +25,7 @@ public class NaverAuthService {
     private final NaverInformationClient naverInformationClient;
     private final UserRepository userRepository;
     private final JwtTokenProvider jwtTokenProvider;
+    private final UserFacade userFacade;
 
     public TokenResponse execute(CodeRequest codeRequest) {
         NaverAuthResponse accessToken = naverAuthClient.getAccessToken(
@@ -41,7 +43,7 @@ public class NaverAuthService {
         String profile_img = (String) info.get("profile_image");
         String email = (String) info.get("email");
 
-        Optional<User> user = userRepository.findByEmail(email);
+        Optional<User> user = userFacade.findEmail(email);
 
         if (user.isEmpty()) {
             userRepository.save(User.builder()

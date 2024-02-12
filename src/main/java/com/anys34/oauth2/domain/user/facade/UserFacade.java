@@ -9,6 +9,8 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Configuration
 public class UserFacade {
@@ -22,5 +24,9 @@ public class UserFacade {
     public User getUserByEmail(String email) {
         return userRepository.findByEmail(email)
                 .orElseThrow(() -> UserNotFoundException.EXCEPTION);
+    }
+
+    public Optional<User> findEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
