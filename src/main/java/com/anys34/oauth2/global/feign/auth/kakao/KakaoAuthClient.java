@@ -10,6 +10,6 @@ public interface KakaoAuthClient {
     @GetMapping("?grant_type=authorization_code&" +
             "client_id={CLIENT_ID}&redirect_uri={REDIRECT_URL}&code={CODE}")
     KakaoAuthResponse getAccessToken(@PathVariable("CLIENT_ID") String client_id,
-                                         @PathVariable("REDIRECT_URL") String url,
-                                         @PathVariable("CODE") String code);
+                                     @PathVariable("REDIRECT_URL") String url,
+                                     @PathVariable("CODE") String code);
 }

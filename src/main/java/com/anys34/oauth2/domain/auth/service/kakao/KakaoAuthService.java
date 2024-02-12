@@ -26,7 +26,7 @@ public class KakaoAuthService {
     private final UserRepository userRepository;
 
     public TokenResponse execute(CodeRequest codeRequest) {
-        KakaoAuthResponse accessToken = kakaoAuthClient.getUserInformation(
+        KakaoAuthResponse accessToken = kakaoAuthClient.getAccessToken(
                 authProperties.getKakaoClientId(),
                 authProperties.getKakaoRedirectUrl(),
                 codeRequest.getCode());
