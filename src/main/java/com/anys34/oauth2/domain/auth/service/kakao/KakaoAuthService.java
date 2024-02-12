@@ -13,6 +13,7 @@ import com.anys34.oauth2.global.feign.auth.kakao.dto.res.KakaoAuthResponse;
 import com.anys34.oauth2.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 import java.util.Optional;
@@ -27,6 +28,7 @@ public class KakaoAuthService {
     private final UserRepository userRepository;
     private final UserFacade userFacade;
 
+    @Transactional
     public TokenResponse execute(CodeRequest codeRequest) {
         KakaoAuthResponse accessToken = kakaoAuthClient.getAccessToken(
                 authProperties.getKakaoClientId(),

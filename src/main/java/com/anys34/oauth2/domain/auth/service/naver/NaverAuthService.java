@@ -13,6 +13,7 @@ import com.anys34.oauth2.global.feign.auth.naver.dto.res.NaverAuthResponse;
 import com.anys34.oauth2.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Map;
 import java.util.Optional;
@@ -27,6 +28,7 @@ public class NaverAuthService {
     private final JwtTokenProvider jwtTokenProvider;
     private final UserFacade userFacade;
 
+    @Transactional
     public TokenResponse execute(CodeRequest codeRequest) {
         NaverAuthResponse accessToken = naverAuthClient.getAccessToken(
                 authProperties.getNaverClientId(),
