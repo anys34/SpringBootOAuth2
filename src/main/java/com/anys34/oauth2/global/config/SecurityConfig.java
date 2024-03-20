@@ -40,6 +40,9 @@ public class SecurityConfig {
         http.exceptionHandling().authenticationEntryPoint(
                 new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
 
+        http
+            .apply(new FilterConfig(jwtProvider));
+
         return http.build();
     }
 }

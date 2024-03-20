@@ -7,5 +7,5 @@ public class UnexpectedTokenException extends BusinessException {
     public static final BusinessException EXCEPTION =
             new UnexpectedTokenException();
 
-    private UnexpectedTokenException() {super(ErrorCode.UNEXPECTED_TOKEN);}
+    private UnexpectedTokenException() {super(ErrorCode.INVALID_JWT);}
 }
