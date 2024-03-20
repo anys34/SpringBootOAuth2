@@ -4,6 +4,7 @@ import com.anys34.oauth2.domain.auth.domain.RefreshToken;
 import com.anys34.oauth2.domain.auth.domain.repository.RefreshTokenRepository;
 import com.anys34.oauth2.global.config.properties.JwtProperties;
 import com.anys34.oauth2.global.security.jwt.exception.ExpiredJwtException;
+import com.anys34.oauth2.global.security.jwt.exception.InvalidJwtException;
 import com.anys34.oauth2.global.security.principle.AuthDetailsService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -79,8 +80,10 @@ public class JwtTokenProvider {
         try {
             return Jwts.parser().setSigningKey(jwtProperties.getSecretKey())
                     .parseClaimsJws(token).getBody();
-        } catch (Exception e) {
+        } catch(io.jsonwebtoken.ExpiredJwtException e) {
             throw ExpiredJwtException.EXCEPTION;
+        } catch (Exception e) {
+            throw InvalidJwtException.EXCEPTION;
         }
     }
 }
